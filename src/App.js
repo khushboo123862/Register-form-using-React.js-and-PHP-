@@ -21,11 +21,12 @@ function App() {
         Name:Name
       });
 
-      if (response.data.success) {
-setMessage(response.data.message + " Welcome " + response.data.user);
-      } else {
-        setMessage("Error: " + response.data.message);
-      }
+    
+if (response.data.includes("successfully")) {
+    setMessage(response.data);
+} else {
+    setMessage("Error: " + response.data);
+}
       
     } catch (error) {
       console.error(error);
@@ -33,7 +34,7 @@ setMessage(response.data.message + " Welcome " + response.data.user);
     }
   };
 
-  return (
+ return (
     <div className='Login-card'>
       <h2>Register</h2>
       <form onSubmit={handleLogin}>
