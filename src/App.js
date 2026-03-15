@@ -12,7 +12,7 @@ function App() {
     e.preventDefault();
     
     try {
-      // PHP file ka path - dhyan rakhein ki XAMPP Apache on ho!
+      
       const url = "http://localhost/auth_api/login.php"; 
       
       const response = await axios.post(url, {
@@ -26,6 +26,7 @@ setMessage(response.data.message + " Welcome " + response.data.user);
       } else {
         setMessage("Error: " + response.data.message);
       }
+      
     } catch (error) {
       console.error(error);
       setMessage("Server connect nahi ho raha!");
